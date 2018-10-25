@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 iris = load_iris()
 #print(type(iris))
 
-X = iris.data[:, :2]
+X = iris.data
 y = iris.target
 k = 7
 #print(type(X))
@@ -46,3 +46,7 @@ print('Accuracy:', (number_of_correctly_classified_test_instances/test_set_size)
 
 #from sklearn.metrics import accuracy_score
 #print('Accuracy:', accuracy_score(y_test, y_pred) * 100, '%')
+
+from sklearn.metrics import confusion_matrix, classification_report
+print('\nConfusion Matrix:\n', confusion_matrix(y_test, y_pred))
+print('\nClassification Report:\n', classification_report(y_test, y_pred))
